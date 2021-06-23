@@ -1,0 +1,1 @@
+/usr/bin/c++  -g -std=c++11 -fPIC CMakeFiles/example.dir/mytest.cpp.o -o ../../bin/example  ../../lib/liblib1.a -lmysqlclient 

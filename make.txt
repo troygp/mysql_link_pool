@@ -1,0 +1,23 @@
+objects = single_thread.o  mysql_curd.o  connection_pool.o
+object_link_pool = test_linkpool.o mysql_curd.o  connection_pool.o
+
+test_linkpool : $(object_link_pool)
+	g++ -o test_linkpool $(object_link_pool) `mysql_config --cflags --libs` -lpthread
+
+test_linkpool.o : test_linkpool.cc
+	cc -c test_linkpool.cc `mysql_config --cflags --libs`
+
+mysql_curd.o : mysql_curd.h public.h
+	cc -c mysql_curd.cc `mysql_config --cflags --libs`
+
+connection_pool.o : connection_pool.h mysql_curd.h public.h
+	cc -c connection_pool.cc `mysql_config --cflags --libs` 
+
+
+#all : connection_pool.o mysql_curd.o mytest.o  mytest
+#all :  mysql_curd.o connection_pool.o mytest.o  mytest
+#.PHONY : all
+
+.PHONY : clean
+clean : 
+	-rm  $(object_link_pool)

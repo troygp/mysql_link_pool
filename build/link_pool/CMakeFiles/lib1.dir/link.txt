@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../lib/liblib1.a CMakeFiles/lib1.dir/src/connection_pool.cpp.o CMakeFiles/lib1.dir/src/mysql_curd.cpp.o
+/usr/bin/ranlib ../../lib/liblib1.a

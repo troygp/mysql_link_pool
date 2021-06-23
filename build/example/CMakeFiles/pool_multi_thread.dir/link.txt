@@ -1,0 +1,1 @@
+/usr/bin/c++  -g -std=c++11 -fPIC CMakeFiles/pool_multi_thread.dir/test_linkpool.cpp.o -o ../../bin/pool_multi_thread  ../../lib/liblib1.a -lmysqlclient -lpthread 
